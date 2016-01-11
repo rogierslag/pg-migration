@@ -8,13 +8,7 @@ It is based on the excellent [node-postgres](https://github.com/brianc/node-post
 
 ## The database changelog table
 
-Before you can use this, ensure the database has at least one table.
-You will need the following SQL for this
-
-```sql
-CREATE TABLE dbchangelog(id bigint, datetime timestamp with time zone);
-CREATE UNIQUE index changeset on dbchangelog(id);
-```
+pg-migration will automatically create the table (`dbchangelog`) for you.
 
 ## How to use
 
@@ -24,5 +18,10 @@ CREATE UNIQUE index changeset on dbchangelog(id);
 
 Files called `README.md` and `dbchangelog.sql` from the migrations folder are ignored.
 
-Since the changeset id is derived from the file name, you can use the following command to create a new one `touch `date +%Y%m%d%H%M%S`.sql`.
+Since the changeset id is derived from the file name, you can use the following command to create a new one
+
+```bash
+touch `date +%Y%m%d%H%M%S`.sql
+```
+
 Please be careful that the files will be executed in a alphabetically sorted fashion, so ensure that files do not depend on anything later (it's really a poor mans Liquibase).
