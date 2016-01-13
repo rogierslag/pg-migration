@@ -1,6 +1,9 @@
 import fs from 'fs-extra';
 import pg from 'pg';
 
+// Promise polyfill for ES5 compatibility
+require('es6-promise').polyfill();
+
 function log(level, message) {
   const obj = {
     datetime: Date.now(),
