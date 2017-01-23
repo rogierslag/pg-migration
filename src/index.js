@@ -96,7 +96,7 @@ function migrate(databaseClient, migrationsDir, cb) {
       });
 
     Promise.all(promises).then(() => cb()).catch(() => {
-      log.log('error', 'One or more migrations failed to apply');
+      log('error', 'One or more migrations failed to apply');
       process.exit();
     });
   });
