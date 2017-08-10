@@ -66,7 +66,7 @@ function migrate(databaseClient, migrationsDir, cb) {
             }
             log('info', `Applying changeset ${changesetCode}`);
             // Read the file content
-            const changesetContent = fs.readFileSync(`./migrations/${changeset}`, 'UTF-8');
+            const changesetContent = fs.readFileSync(`{$migrationsDir}/${changeset}`, 'UTF-8');
             databaseClient.query("BEGIN", (err) => {
               databaseClient.query(changesetContent, (err) => {
                 // Apply the changeset
