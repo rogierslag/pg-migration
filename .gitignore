@@ -1,2 +1,4 @@
+.settings/
+.project
 lib/
 node_modules/

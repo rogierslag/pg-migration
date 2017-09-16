@@ -1,6 +1,6 @@
 {
   "name": "pg-migration",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "description": "Apply changesets of your data structure for Postgresql easily from your node application",
   "main": "lib/index.js",
   "scripts": {
