@@ -94,11 +94,12 @@ function migrate(databaseClient, migrationsDir, cb) {
       }, Promise.resolve())
 
     promise
-      .then(cb)
-      .catch(() => {
+      .catch(err => {
+        console.log(err)
         log('error', 'One or more migrations failed to apply')
         process.exit()
       })
+      .then(cb)
   })
 }
 
