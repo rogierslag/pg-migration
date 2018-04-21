@@ -12,7 +12,8 @@ pg-migration will automatically create the table (`dbchangelog`) for you.
 
 ## How to use
 
-1. Import the library `import migrateAndStart from 'pg-migration';`
+1. Import the library `import migration from 'pg-migration';`
+1. Configure the library: `const migrateAndStart = migration({ log: (level, message) => { your logging code here } })`
 1. Create a valid database client connection
 1. Create the migration, with that client, and a callback to the server start (e.g. `migrateAndStart(db, './migrations', startServer);`)
 
